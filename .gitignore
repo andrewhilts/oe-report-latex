@@ -4,3 +4,4 @@
 *.synctex.gz
 *.toc
 oe-assets/oe.log
+.DS_Store
