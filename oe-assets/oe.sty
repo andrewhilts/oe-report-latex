@@ -1,0 +1,110 @@
+\usepackage{color} %include colors
+
+\usepackage[T1]{fontenc} %include font support
+\usepackage{lmodern} %make fonts look better
+%\usepackage{garamond} %include garamond
+%\usepackage{helvet} %include helvetica
+%\usepackage{xcolor,mdframed,caption} %for the box
+\usepackage{fontspec}
+\usepackage{setspace}
+\usepackage{mdframed}
+
+\usepackage{ragged2e}
+\setmainfont{Source Sans Pro}
+\setsansfont{Brandon Grotesque}
+
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{sectsty}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\captionsetup{font=footnotesize}
+\setlength{\parindent}{15pt}
+
+\pdfmapfile{=ggm.map}
+\titlespacing*{\section} {0pt}{0.5ex plus 1ex minus .2ex}{0.3ex plus .2ex}
+\usepackage[hang,multiple]{footmisc}
+
+\renewcommand{\footnotelayout}{\raggedright\noindent}
+\newgeometry{margin = 1in}
+
+
+%\raggedright
+%\setlength{\parskip}{19.5pt}
+%\setlength{\parindent}{1.625em}
+\linespread{1.2}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\rmfamily --\thepage--}
+
+
+%CHANGE TITLE PAGE
+\renewcommand\@maketitle{\newpage
+\newgeometry{margin = 0in}
+\hspace*{0.25in}\
+\includegraphics[width=3.09in]{oe-assets/OE-Logo-CMYK.eps}
+\vspace{-0.01in}
+\setlength{\fboxsep}{0pt}
+\hfill \colorbox{oeGray}{\makebox[3.22in][r]{\shortstack[r]{\vspace{2.9in}}}}%
+%\hfill \colorbox{oeGray}{\hspace{.25in} \parbox{2.97in}{\vspace{2.75in}}}%
+\vspace{-0.25pt}
+\setlength{\fboxsep}{10pt}
+\setlength{\fboxrule}{0pt}
+\vspace{0.02in}
+\colorbox{oeOrange}{\makebox[8.25in][l]{\hfill \shortstack[r]{\fontsize{36}{36}\rmfamily\color{white} \@title\\%
+\fontsize{18}{18}\rmfamily\color{white} \cpiType}}}%
+\setlength{\fboxsep}{0pt}
+\vspace{-6pt}
+
+%\hfill \colorbox{oeGray}{\makebox[3.22in][r]{\shortstack[r]{\vspace{4in} \color{white} \textbf{\@author \\ \\ Climate Policy Initiative San Francisco \\ \\ \today \vspace{2.3in}}}}%
+%\hfill \colorbox{oeGray}{\hfill \begin{minipage}{3.22in} \vspace{3in} \color{white} turtleface \end{minipage}}%
+\hfill \colorbox{oeGray}{\hspace{.25in} \parbox{2.935in}{\vspace{4.3in} \color{white} \textbf{Open Effect \\ Version \version \\   \@date \vspace{2.2in} \vfill}}}%
+\let\Title\@title
+\restoregeometry}
+
+\newenvironment{toc}
+{
+{\pagebreak}
+}
+
+
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \sffamily
+    \ifnum \c@secnumdepth >\m@ne
+        \large \bfseries \@chapapp\space \thechapter
+        \par\nobreak
+        \vskip 10\p@
+    \fi
+    \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    \vskip 20\p@
+  }}
+
+\def\@makeschapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright
+    \rmfamily
+    \interlinepenalty\@M
+    \Huge\bfseries  #1\par\nobreak
+    \vskip 20\p@
+  }}
+
+\definecolor{oeOrange}{RGB}{241,90,44}
+\definecolor{oeGray}{RGB}{69,68,68}
+\definecolor{oeBlue}{RGB}{171,224,249}
+\allsectionsfont{\color{oeOrange}\sffamily\MakeUppercase}
+
+\global\mdfdefinestyle{oeCallout}{%
+linecolor=oeGray,linewidth=1pt,%
+leftmargin=1cm,rightmargin=1cm, backgroundcolor=oeBlue, skipabove=0.5cm, skipbelow=0.5cm, innertopmargin=0.5cm, innerleftmargin=0.5cm, innerbottommargin=0.5cm, innerrightmargin=0.5cm, nobreak=true
+}
+
